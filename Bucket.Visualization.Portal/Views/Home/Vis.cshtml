@@ -24,10 +24,14 @@
                     var div = document.createElement("div");
                     for (var j = 0; j < samples.length; j++) {
                         var sample = samples[j];
-                        var img = document.createElement("img")
+                        var img = document.createElement("img");
+                        var a = document.createElement("a");
+                        a.target= "_blank";
+                        a.href = "/Home/Detail?Key=" + sample.key + "&Pkey=" + sample.pKey + "&MUrl=" + sample.mUrl + "&PUrl=" + sample.pUrl + "&MDomain=" + sample.mDomain + "&PDomain=" + sample.pDomain + "&ProdThumbnailKey=" + sample.prodThumbnailKey + "&PrismyV3Rank=" + sample.prismyV3Rank + "&Title=" + sample.title;
                         img.src = sample.mUrl;
                         img.height = 200;
-                        div.appendChild(img);
+                        a.appendChild(img)
+                        div.appendChild(a);
                     }
                     document.body.appendChild(div);
                 }

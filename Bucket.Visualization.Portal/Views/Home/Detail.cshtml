@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <link rel="shortcut icon" type="image/ico" href="https://www.bing.com/sa/simg/favicon-2x.ico">
+</head>
+<body>
+</body>
+
+<script>
+    function init() {
+        const params = window.location.search.substring(1)
+        var list = params.split('&');
+        for (var i = 0; i < list.length; i++) {
+            var item = list[i];
+            var h2 = document.createElement("h2")
+            h2.innerText = decodeURI(item.replace('=', ':'));
+            document.body.appendChild(h2);
+        }
+    }
+    window.onload = init;
+</script>
+</html>
