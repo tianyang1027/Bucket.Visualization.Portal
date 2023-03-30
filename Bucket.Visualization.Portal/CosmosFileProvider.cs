@@ -24,7 +24,7 @@ namespace Bucket.Visualization.Portal
             }
             else
             {
-                var cred = AadCredentialHelper.GetCredentialFromPrompt();
+                var cred = AadCredentialHelper.GetCredential();
                 VC.SetupAadCredentials(null, null, cred);
             }
         }
