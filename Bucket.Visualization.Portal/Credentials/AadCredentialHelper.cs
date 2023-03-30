@@ -120,7 +120,7 @@
             string localUserUpn;
             try
             {
-                localUserUpn = UserPrincipal.Current.UserPrincipalName;
+                localUserUpn = "v-yangtian@microsoft.com"; //UserPrincipal.Current.UserPrincipalName;
             }
             catch (InvalidCastException)
             {
