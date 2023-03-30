@@ -48,28 +48,15 @@ namespace Bucket.Visualization.Portal.Controllers
             var samplesStram = _cosmosFileProvider.ReadStream(buketVisualSamplesLocationr);
             var samplesList = ReadSreamToList<SamplesViewModel>(samplesStram);
             List<VisViewModel> visViewModels = new List<VisViewModel>();
-            //statsList.ForEach(x =>
-            //{
-            //    visViewModels.Add(new VisViewModel
-            //    {
-            //        Stats = x,
-            //        Samples = samplesList.FindAll(t => x.BucketName == x.BucketName)
-            //    });
-            //});
-
-
-            foreach (var item in statsList)
+            statsList.ForEach(x =>
             {
-                var model = new VisViewModel
+                visViewModels.Add(new VisViewModel
                 {
-                    Stats = item,
-                    Samples = samplesList.FindAll(t => item.BucketName == item.BucketName)
-                };
-                visViewModels.Add(model);
-            }
+                    Stats = x,
+                    Samples = samplesList.FindAll(t => t.BucketName == x.BucketName)
+                });
+            });
             return new JsonResult(visViewModels);
-
-
         }
 
         private List<T> ReadSreamToList<T>(Stream stream) where T : class

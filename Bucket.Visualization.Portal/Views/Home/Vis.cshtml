@@ -18,7 +18,7 @@
                     var item = array[i];
                     var stats = item.stats;
                     var h2 = document.createElement("h2")
-                    h2.innerText = "In bucket " + stats.bucketName + " there is " + stats.percentage + "samples:30";
+                    h2.innerText = "In bucket " + stats.bucketName + " there is " + stats.percentage + " samples:30";
                     document.body.appendChild(h2);
                     var samples = item.samples;
                     for (var j = 0; j < samples.length; j++) {
