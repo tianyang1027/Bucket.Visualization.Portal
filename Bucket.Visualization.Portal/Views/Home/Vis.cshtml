@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <link rel="shortcut icon" type="image/ico" href="https://www.bing.com/sa/simg/favicon-2x.ico">
+</head>
+<body>
+</body>
+<script>
+    function init() {
+        const params = new URLSearchParams(window.location.search);
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/Adls/getpath?' + params, true);
+        xhr.onload = function () {
+            if (this.status === 200) {
+                const response = this.responseText;
+                console.log(response);
+                for (var i = 0; i < response.length; i++) {
+                    var item = list[i];
+                    var stats = item.Stats;
+                    var h2 = document.body.appendChild(document.createElement("h2"));
+                    h2.innerText = "In bucket " + stats.BucketName + " there is " + stats.Percentage + " samples:30;
+                    var samples = item.Samples;
+                    for (var j = 0; j < samples.length; j++) {
+                        var sample = samples[j];
+                        var div = document.createElement("div");
+                        div.appendChild(document.createElement("img"));
+                        img.src = sample;
+                        document.body.appendChild(img);
+                    }
+                }
+            };
+            xhr.send();
+        }
+        window.onload = init;
+</script>
+</html>
+
