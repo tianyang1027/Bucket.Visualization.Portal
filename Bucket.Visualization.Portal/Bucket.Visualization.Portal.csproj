@@ -17,4 +17,8 @@
     <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.4.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="C:\Users\v-yangtian\.nuget\packages\microsoft.cosmos.vcclient\2.0.28\build\..\binaries\CosmosClientOptics.dll" />
+  </ItemGroup>
+
 </Project>
