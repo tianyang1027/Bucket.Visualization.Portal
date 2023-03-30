@@ -3,7 +3,13 @@
     <link rel="shortcut icon" type="image/ico" href="https://www.bing.com/sa/simg/favicon-2x.ico">
 </head>
 <body>
+    <h2></h2>
+    <div>
+        <img />
+        <img />
+    </div>
 </body>
+
 <script>
     function init() {
         const params = new URLSearchParams(window.location.search);
@@ -29,8 +35,10 @@
                 }
             };
             xhr.send();
+
         }
-        window.onload = init;
+    }
+    window.onload = init;
 </script>
 </html>
 
