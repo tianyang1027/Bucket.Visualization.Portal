@@ -3,11 +3,6 @@
     <link rel="shortcut icon" type="image/ico" href="https://www.bing.com/sa/simg/favicon-2x.ico">
 </head>
 <body>
-    <h2></h2>
-    <div>
-        <img />
-        <img />
-    </div>
 </body>
 
 <script>
@@ -22,15 +17,17 @@
                 for (var i = 0; i < array.length; i++) {
                     var item = array[i];
                     var stats = item.stats;
-                    var h2 = document.body.appendChild(document.createElement("h2"));
-                    h2.innerText = "In bucket " + stats.BucketName + " there is " + stats.Percentage + "samples:30";
+                    var h2 = document.createElement("h2")
+                    h2.innerText = "In bucket " + stats.bucketName + " there is " + stats.percentage + "samples:30";
+                    document.body.appendChild(h2);
                     var samples = item.samples;
                     for (var j = 0; j < samples.length; j++) {
                         var sample = samples[j];
                         var div = document.createElement("div");
-                        div.appendChild(document.createElement("img"));
+                        var img = document.createElement("img")
                         img.src = sample.mUrl;
-                        document.body.appendChild(img);
+                        div.appendChild(img);
+                        document.body.appendChild(div);
                     }
                 }
             }
