@@ -18,13 +18,13 @@
         xhr.onload = function () {
             if (this.status === 200) {
                 const response = this.responseText;
-                console.log(response);
-                for (var i = 0; i < response.length; i++) {
-                    var item = list[i];
-                    var stats = item.Stats;
+                var array = JSON.parse(response);
+                for (var i = 0; i < array.length; i++) {
+                    var item = array[i];
+                    var stats = item.stats;
                     var h2 = document.body.appendChild(document.createElement("h2"));
                     h2.innerText = "In bucket " + stats.BucketName + " there is " + stats.Percentage + "samples:30";
-                    var samples = item.Samples;
+                    var samples = item.samples;
                     for (var j = 0; j < samples.length; j++) {
                         var sample = samples[j];
                         var div = document.createElement("div");
