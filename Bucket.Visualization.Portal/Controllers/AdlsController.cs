@@ -68,11 +68,7 @@ namespace Bucket.Visualization.Portal.Controllers
             string[] headers = { };
             while ((line = sr.ReadLine()) != null)
             {
-                if (index == 0)
-                {
-                    headers = line.Split('\t');
-                }
-                else
+                if (index != 0)
                 {
                     T t = Activator.CreateInstance<T>();
                     var cells = line.Split('\t');
@@ -87,6 +83,10 @@ namespace Bucket.Visualization.Portal.Controllers
                         }
                     }
                     list.Add(t);
+                }
+                else
+                {
+                    headers = line.Split('\t');
                 }
                 index++;
             }

@@ -21,15 +21,15 @@
                     h2.innerText = "In bucket " + stats.bucketName + " there is " + stats.percentage + " samples:30";
                     document.body.appendChild(h2);
                     var samples = item.samples;
+                    var div = document.createElement("div");
                     for (var j = 0; j < samples.length; j++) {
                         var sample = samples[j];
-                        var div = document.createElement("div");
                         var img = document.createElement("img")
                         img.src = sample.mUrl;
                         img.height = 200;
                         div.appendChild(img);
-                        document.body.appendChild(div);
                     }
+                    document.body.appendChild(div);
                 }
             }
         }
