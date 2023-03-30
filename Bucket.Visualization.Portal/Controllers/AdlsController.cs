@@ -92,12 +92,5 @@ namespace Bucket.Visualization.Portal.Controllers
             }
             return list;
         }
-
-        private static ActionResult ProcessError(int statusCode, string message) => new ContentResult
-        {
-            StatusCode = statusCode,
-            Content = message,
-            ContentType = "text/plain",
-        };
     }
 }
