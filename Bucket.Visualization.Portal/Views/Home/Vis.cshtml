@@ -3,6 +3,7 @@
     <link rel="shortcut icon" type="image/ico" href="https://www.bing.com/sa/simg/favicon-2x.ico">
 </head>
 <body>
+    <h2 id="loading">loading...</h2>
 </body>
 
 <script>
@@ -12,6 +13,7 @@
         xhr.open('GET', '/Adls/getpath?' + params, true);
         xhr.onload = function () {
             if (this.status === 200) {
+                document.getElementById("loading").remove();
                 const response = this.responseText;
                 var array = JSON.parse(response);
                 for (var i = 0; i < array.length; i++) {
