@@ -61,13 +61,6 @@ namespace Bucket.Visualization.Portal.Controllers
 
         }
 
-        private static ActionResult ProcessError(int statusCode, string message) => new ContentResult
-        {
-            StatusCode = statusCode,
-            Content = message,
-            ContentType = "text/plain",
-        };
-
         private List<T> ReadSreamToList<T>(Stream stream) where T : class
         {
             StreamReader sr = new StreamReader(stream);
@@ -101,5 +94,12 @@ namespace Bucket.Visualization.Portal.Controllers
             }
             return list;
         }
+
+        private static ActionResult ProcessError(int statusCode, string message) => new ContentResult
+        {
+            StatusCode = statusCode,
+            Content = message,
+            ContentType = "text/plain",
+        };
     }
 }
