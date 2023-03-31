@@ -23,4 +23,12 @@
     <Content Remove="C:\Users\v-yangtian\.nuget\packages\microsoft.cosmos.vcclient\2.0.28\build\..\binaries\CosmosClientOptics.dll" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="C:\Users\v-yangtian\.nuget\packages\microsoft.cosmos.vcclient\2.0.28\build\..\binaries\VcClientCliWrapper.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\v-yangtian\.nuget\packages\microsoft.cosmos.vcclient\2.0.28\build\..\binaries\VcClientCliWrapper.lib" />
+  </ItemGroup>
+
 </Project>
